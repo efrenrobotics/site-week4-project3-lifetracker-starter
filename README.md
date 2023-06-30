@@ -474,31 +474,38 @@ Here are the pieces of functionality that should be built out for the backend:
           - [ ] This should include things like ending any open database client connections
   - [x] Commit all work to `git`
 - [ ] **Authentication**
+
   - [ ] Go ahead and build out a full-fledged authentication flow using PostgreSQL, `bcrypt`, and JSON Web Tokens. For it all to work, we'll need a `User` model, a `security` middleware, some `tokens` utility functions, and the appropriate `auth` routes.
-  - [ ] Add new directories for `models`, `routes`, and `middleware`
-  - [ ] The **User** model
-    - [ ] In the `models` directory, create two new files: `models/user.js` and `models/user.test.js`
-      - [ ] The `User` model should have **at least** the following static methods:
-        - [ ] `login`
-        - [ ] `register`
-        - [ ] `fetchUserByEmail`
+  - [x] Add new directories for `models`, `routes`, and `middleware`
+  - [x] The **User** model
+
+    - [x] In the `models` directory, create two new files: `models/user.js` and `models/user.test.js`
+      - [x] The `User` model should have **at least** the following static methods:
+        - [x] `login`
+        - [x] `register`
+        - [x] `fetchUserByEmail`
     - [ ] In the `models/user.test.js` file:
+
       - [ ] Test the `login` method. Write test cases for:
         - [ ] User can login successfully with proper credentials
-        - [ ] Unknown email throws `UnauthorizedError`
+        - [x] Unknown email throws `UnauthorizedError`
         - [ ] Invalid credentials throws `UnauthorizedError`
       - [ ] Test the `register` method. Write test cases for:
+
         - [ ] User can successfully register with proper credentials
-        - [ ] Registering with duplicate email throws `BadRequestError`
+        - [x] Registering with duplicate email throws `BadRequestError`
         - [ ] Registering with duplicate username throws `BadRequestError`
         - [ ] Registering with invalid email throws `BadRequestError`
+
       - [ ] Test the `fetchUserByEmail` method:. Write test cases for:
         - [ ] A valid email returns a user from the database
         - [ ] Invalid emails are handled correctly
       - [ ] It will probably be important to use the `beforeAll`, `afterAll`, `beforeEach`, and `afterEach` hooks to add and delete users from the database before running the tests
+
     - [ ] In the `models/user.js` file:
       - [ ] Import the `bcrypt` package, the `db` client, and the app `config`.
       - [ ] Implement the features outlined in the tests until they're all passing.
+
   - [ ] Commit all work to `git`
   - [ ] The **tokens** utility functions
     - [ ] In the `utils` directory, create two new files: `utils/tokens.js` and `utils/tokens.test.js`
@@ -573,6 +580,7 @@ Here are the pieces of functionality that should be built out for the backend:
     - [ ] Mount the router at the `/auth` endpoint
   - [ ] Commit all work to `git`
   - [ ] There should now be a full-fledged authentication system in place!
+
 - [ ] **Resources and Permissions**
   - [ ] Next, implement the functionality to allow users to save instances of things they've drank/eaten, so that they can track their own nutrition data! Also make sure users can only access the data that they themselves have created. No other user should be able to see any data owned by another user!
   - [ ] The **Nutrition** model
