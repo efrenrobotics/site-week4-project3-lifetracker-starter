@@ -21,6 +21,6 @@ CREATE DATABASE lifetracker_test;
 -- connect to lifetracker-test
 \c lifetracker_test
 
--- run schema script
+-- run schema scriptf
 \i lifetracker-schema.sql;
 

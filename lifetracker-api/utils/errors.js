@@ -1,4 +1,10 @@
-class ErrorHandler extends Error {
+/** ExpressError extends normal JS error so we can
+ *  add a status when we make an instance of it.
+ *
+ *  The error-handling middleware will return this.
+ */
+
+class ExpressError extends Error {
   constructor(message, status) {
     super();
     this.message = message;
@@ -8,7 +14,7 @@ class ErrorHandler extends Error {
 
 /** 400 BAD REQUEST error. */
 
-class BadRequestError extends ErrorHandler {
+class BadRequestError extends ExpressError {
   constructor(message = "Bad Request") {
     super(message, 400);
   }
@@ -16,7 +22,7 @@ class BadRequestError extends ErrorHandler {
 
 /** 401 UNAUTHORIZED error. */
 
-class UnauthorizedError extends ErrorHandler {
+class UnauthorizedError extends ExpressError {
   constructor(message = "Unauthorized") {
     super(message, 401);
   }
@@ -24,7 +30,7 @@ class UnauthorizedError extends ErrorHandler {
 
 /** 403 Forbidden error. */
 
-class ForbiddenError extends ErrorHandler {
+class ForbiddenError extends ExpressError {
   constructor(message = "Forbidden") {
     super(message, 403);
   }
@@ -32,7 +38,7 @@ class ForbiddenError extends ErrorHandler {
 
 /** 404 NOT FOUND error. */
 
-class NotFoundError extends ErrorHandler {
+class NotFoundError extends ExpressError {
   constructor(message = "Not Found") {
     super(message, 404);
   }
@@ -40,14 +46,14 @@ class NotFoundError extends ErrorHandler {
 
 /** 422 Unprocessable Entity error */
 
-class UnprocessableEntityError extends ErrorHandler {
+class UnprocessableEntityError extends ExpressError {
   constructor(message = "Unprocessable Entity") {
     super(message, 422);
   }
 }
 
 module.exports = {
-  ErrorHandler,
+  ExpressError,
   BadRequestError,
   UnauthorizedError,
   ForbiddenError,

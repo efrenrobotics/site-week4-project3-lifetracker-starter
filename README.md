@@ -487,24 +487,24 @@ Here are the pieces of functionality that should be built out for the backend:
     - [ ] In the `models/user.test.js` file:
 
       - [ ] Test the `login` method. Write test cases for:
-        - [ ] User can login successfully with proper credentials
+        - [x] User can login successfully with proper credentials
         - [x] Unknown email throws `UnauthorizedError`
-        - [ ] Invalid credentials throws `UnauthorizedError`
+        - [x] Invalid credentials throws `UnauthorizedError`
       - [ ] Test the `register` method. Write test cases for:
 
-        - [ ] User can successfully register with proper credentials
+        - [x] User can successfully register with proper credentials
         - [x] Registering with duplicate email throws `BadRequestError`
-        - [ ] Registering with duplicate username throws `BadRequestError`
-        - [ ] Registering with invalid email throws `BadRequestError`
+        - [x] Registering with duplicate username throws `BadRequestError`
+        - [x] Registering with invalid email throws `BadRequestError`
 
       - [ ] Test the `fetchUserByEmail` method:. Write test cases for:
-        - [ ] A valid email returns a user from the database
-        - [ ] Invalid emails are handled correctly
+        - [x] A valid email returns a user from the database
+        - [x] Invalid emails are handled correctly
       - [ ] It will probably be important to use the `beforeAll`, `afterAll`, `beforeEach`, and `afterEach` hooks to add and delete users from the database before running the tests
 
-    - [ ] In the `models/user.js` file:
-      - [ ] Import the `bcrypt` package, the `db` client, and the app `config`.
-      - [ ] Implement the features outlined in the tests until they're all passing.
+    - [x] In the `models/user.js` file:
+      - [x] Import the `bcrypt` package, the `db` client, and the app `config`.
+      - [x] Implement the features outlined in the tests until they're all passing.
 
   - [ ] Commit all work to `git`
   - [ ] The **tokens** utility functions

@@ -1,45 +1,37 @@
-// setup dependencies
 const express = require("express");
-const morgan = require("morgan");
 const cors = require("cors");
+const morgan = require("morgan");
 
-// user authentication router
-const userAuthRouter = require("./routes/AuthRoute");
-
-// import config
+const { NotFoundError } = require("./utils/errors");
 const config = require("./config");
-
-// import error handling methods
-const {
-  ErrorHandler,
-  BadRequestError,
-  UnauthorizedError,
-  ForbiddenError,
-  NotFoundError,
-  UnprocessableEntityError,
-} = require("./utils/errors");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-// mount middleware
+// enable cross-origin resource sharing for all origins for all requests
 app.use(cors());
-app.use(morgan("dev"));
+// parse incoming requests with JSON payloads
 app.use(express.json());
+// log requests info
+app.use(morgan("dev"));
 
-app.use("/auth", userAuthRouter);
+// routes
+app.use("/auth", authRoutes);
 
-// display home router
-app.get("/", (req, res) => {
-  return res.status(200).json({ ping: "pong" });
+// health check
+app.get("/", function (req, res) {
+  return res.status(200).json({
+    ping: "pong",
+  });
 });
 
-// NotFound Error handler
-app.use((req, res, next) => {
+/** Handle 404 errors -- this matches everything */
+app.use(function (req, res, next) {
   return next(new NotFoundError());
 });
 
-// Generic error handler
-app.use((err, req, res, next) => {
+/** Generic error handler; anything unhandled goes here. */
+app.use(function (err, req, res, next) {
   if (!config.IS_TESTING) console.error(err.stack);
   const status = err.status || 500;
   const message = err.message;
