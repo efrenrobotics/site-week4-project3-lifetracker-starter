@@ -1,0 +1,4 @@
+.navbar-inputs {
+  display: flex;
+  flex-direction: column;
+}

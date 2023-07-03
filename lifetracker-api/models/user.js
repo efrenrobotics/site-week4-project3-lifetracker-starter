@@ -21,6 +21,8 @@ class User {
       const isValidUser = await bcrypt.compare(password, userExists.password);
       if (isValidUser) {
         return userExists;
+      } else {
+        throw new UnauthorizedError(`Invalid password for user ${email}`);
       }
     }
     throw new UnauthorizedError("Invalid username or password");

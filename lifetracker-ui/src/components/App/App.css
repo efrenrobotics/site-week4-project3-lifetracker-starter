@@ -6,3 +6,12 @@
   min-height: 100vh;
   background: #f7fafc;
 }
+
+:root {
+  /* CSS HEX */
+  --black: #000000ff;
+  --oxford-blue: #14213dff;
+  --orange-web: #fca311ff;
+  --platinum: #e5e5e5ff;
+  --white: #ffffffff;
+}
