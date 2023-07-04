@@ -3,7 +3,7 @@ import Home from "../Home/Home";
 const Landing = () => {
   return (
     <div>
-      <h1> LANDING </h1>
+      <h1> Landing </h1>
 
       <Home />
     </div>

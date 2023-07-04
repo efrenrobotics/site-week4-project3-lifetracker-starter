@@ -24,8 +24,8 @@ By the end of this project you will be able to...
 ### Core Features
 
 - [ ] **The Landing Page:** Display a large hero image and a brief blurb on what this application is about. _Note:_ This is the only page that unauthenticated users should be able to view.
-- [ ] **Registration Page:** A form that allows the user to sign up with their email, password, username, first name, and last name.
-- [ ] **Login Page:** A form that allows users to login with email and password.
+- [x] **Registration Page:** A form that allows the user to sign up with their email, password, username, first name, and last name.
+- [x] **Login Page:** A form that allows users to login with email and password.
 - [ ] When a user first authenticates, they should be redirected to an authenticated view (i.e., the detailed activity page). When they sign out, all frontend data should be reset.
 - [ ] **The Nav Bar:** Implement customized views for users who are logged in vs not logged in.
   - [ ] If the user is logged in, it should display a **Sign Out** button.
@@ -68,17 +68,17 @@ Implement any of the following features to improve the application:
 
 #### Handling API Requests
 
-- [ ] Create a `constants.js` file at the root of the project that exports the following variables:
+- [x] Create a `constants.js` file at the root of the project that exports the following variables:
   - [ ] `PRODUCTION_API_BASE_URL` - set to whatever URL the production API is deployed at
-  - [ ] `DEVELOPMENT_API_BASE_URL` - set to `"http://localhost:3001"` for development
-  - [ ] `API_BASE_URL` - If `process.env.NODE_ENV` is `production`, set this to `PRODUCTION_API_BASE_URL`, otherwise set it to `DEVELOPMENT_API_BASE_URL`
-- [ ] Create a `services` directory at the root of the project.
-- [ ] Inside the `services` directory, create an `apiClient.js` file
-- [ ] In the `apiClient.js` file, import the `axios` package and the `API_BASE_URL` constant from the `constants.js` file.
-- [ ] Define a new class in that file called `ApiClient`.
-  - [ ] Give it a constructor function that accepts a single parameter - `remoteHostUrl`. The constructor should attach the `remoteHostUrl` parameter to a new instance with `this.remoteHostUrl = remoteHostUrl`. It should also set `this.token = null`.
-  - [ ] Export default a new instance of the `ApiClient` class.
-  - [ ] Add an additional method called `setToken` that accepts a single parameter - `token` and attaches it to the instance.
+  - [x] `DEVELOPMENT_API_BASE_URL` - set to `"http://localhost:3001"` for development
+  - [x] `API_BASE_URL` - If `process.env.NODE_ENV` is `production`, set this to `PRODUCTION_API_BASE_URL`, otherwise set it to `DEVELOPMENT_API_BASE_URL`
+- [x] Create a `services` directory at the root of the project.
+- [x] Inside the `services` directory, create an `apiClient.js` file
+- [x] In the `apiClient.js` file, import the `axios` package and the `API_BASE_URL` constant from the `constants.js` file.
+- [x] Define a new class in that file called `ApiClient`.
+  - [x] Give it a constructor function that accepts a single parameter - `remoteHostUrl`. The constructor should attach the `remoteHostUrl` parameter to a new instance with `this.remoteHostUrl = remoteHostUrl`. It should also set `this.token = null`.
+  - [x] Export default a new instance of the `ApiClient` class.
+  - [x] Add an additional method called `setToken` that accepts a single parameter - `token` and attaches it to the instance.
   - [ ] Create a utility method called `request` that uses `axios` to issue HTTP requests
   - [ ] Add a `login` method that uses the `request` method to send an HTTP request to the `auth/login` endpoint
   - [ ] Add a `signup` method that uses the `request` method to send an HTTP request to the `auth/register` endpoint
