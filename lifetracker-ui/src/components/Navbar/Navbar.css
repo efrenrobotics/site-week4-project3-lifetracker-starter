@@ -1,5 +1,16 @@
 .navbar {
+  background-color: #14213d;
   padding-top: 20px;
   display: flex;
   justify-content: space-around;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.navbar button {
+  color: black;
+  size: 500px;
+  align-items: center;
 }

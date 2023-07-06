@@ -1,8 +1,17 @@
-:root {
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+#root {
   /* CSS HEX */
   --black: #000000ff;
   --oxford-blue: #14213dff;
   --orange-web: #fca311ff;
   --platinum: #e5e5e5ff;
   --white: #ffffffff;
+  width: 100vw;
+  height: 100vh;
 }

@@ -7,14 +7,50 @@ class ApiClient {
     this.token = null;
   }
 
+  // set JWT
   setToken(token) {
     this.token = token;
   }
 
-  async request() {
-    const res = await axios.get(this.remoteHostUrl);
-    return res.data;
+  /**
+   * Utility method to make HTTP requests using axios
+   *
+   * @param {String endpoint, String method, data = Object} param0
+   * @returns HTTP Method result
+   */
+  async request({ endpoint, method, data = {} }) {
+    // construct url to given endpoint
+    const url = `${API_BASE_URL}/${endpoint}`;
+    // dynamic params for GET request
+    const params = method === "get" ? data : {};
+
+    const headers = { "Content-Type": "application/json" };
+
+    if (this.token) {
+      headers["Authorization"] = `Bearer ${this.token}`;
+    }
+
+    try {
+      const res = await axios({ url, method, data, params, headers });
+      return { data: res.data, error: null, message: null };
+    } catch (e) {
+      console.error("APIClient make request error", e.response);
+      if (e.response.status === 404) return { data: null, error: "Not Found" };
+      return {
+        data: null,
+        error: e.response,
+        message: e.response.data.error.message,
+      };
+    }
+  }
+
+  async login(creds) {
+    return await this.request({
+      endpoint: `auth/login`,
+      method: `POST`,
+      data: creds,
+    });
   }
 }
 
-module.exports = new ApiClient();
+export default new ApiClient(API_BASE_URL);

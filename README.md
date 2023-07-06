@@ -23,7 +23,7 @@ By the end of this project you will be able to...
 
 ### Core Features
 
-- [ ] **The Landing Page:** Display a large hero image and a brief blurb on what this application is about. _Note:_ This is the only page that unauthenticated users should be able to view.
+- [x] **The Landing Page:** Display a large hero image and a brief blurb on what this application is about. _Note:_ This is the only page that unauthenticated users should be able to view.
 - [x] **Registration Page:** A form that allows the user to sign up with their email, password, username, first name, and last name.
 - [x] **Login Page:** A form that allows users to login with email and password.
 - [ ] When a user first authenticates, they should be redirected to an authenticated view (i.e., the detailed activity page). When they sign out, all frontend data should be reset.
@@ -54,10 +54,10 @@ Implement any of the following features to improve the application:
 
 #### The `App` Component
 
-- [ ] Build the `App` component to:
+- [x] Build the `App` component to:
   - [x] Be wrapped by an element with the class name of `app`
-  - [ ] Contain the routes for the app
-  - [ ] Render the `Navbar` component on every route
+  - [x] Contain the routes for the app
+  - [x] Render the `Navbar` component on every route
   - [x] Render a `BrowserRouter` component that contains a `Routes` component with the following routes:
     - [x] `/` - Render the `Landing` component
     - [x] `/login` - Render the `LoginPage` component
@@ -79,7 +79,7 @@ Implement any of the following features to improve the application:
   - [x] Give it a constructor function that accepts a single parameter - `remoteHostUrl`. The constructor should attach the `remoteHostUrl` parameter to a new instance with `this.remoteHostUrl = remoteHostUrl`. It should also set `this.token = null`.
   - [x] Export default a new instance of the `ApiClient` class.
   - [x] Add an additional method called `setToken` that accepts a single parameter - `token` and attaches it to the instance.
-  - [ ] Create a utility method called `request` that uses `axios` to issue HTTP requests
+  - [x] Create a utility method called `request` that uses `axios` to issue HTTP requests
   - [ ] Add a `login` method that uses the `request` method to send an HTTP request to the `auth/login` endpoint
   - [ ] Add a `signup` method that uses the `request` method to send an HTTP request to the `auth/register` endpoint
   - [ ] Add a `fetchUserFromToken` method that uses the `request` method to send an HTTP request to the `auth/me` endpoint
@@ -89,10 +89,10 @@ Implement any of the following features to improve the application:
 
 Update the `App` component to manage authentication state:
 
-- [ ] Create a state variable called `appState` with a function called `setAppState` to update that state.
-  - [ ] Initialize `appState` with an object containing properties like `user`, `isAuthenticated`, `nutrition`, `sleep`, and `exercise`.
-- [ ] Implement a `useEffect` hook to fetch the user data.
-  - [ ] Define an asynchronous function named `fetchUser` to fetch the user data.
+- [x] Create a state variable called `appState` with a function called `setAppState` to update that state.
+  - [x] Initialize `appState` with an object containing properties like `user`, `isAuthenticated`, `nutrition`, `sleep`, and `exercise`.
+- [x] Implement a `useEffect` hook to fetch the user data.
+  - [x] Define an asynchronous function named `fetchUser` to fetch the user data.
     - [ ] Inside the `fetchUser` function, retrieve a token from `localStorage` using `localStorage.getItem("lifetracker_token")`
     - [ ] Call the `setToken` function from the `apiClient.js` file.
     - [ ] Make an API call to fetch user data using the `fetchUser` function from the `apiClient.js` file and extract the `data` from the response.
@@ -111,57 +111,57 @@ Update the `App` component to manage authentication state:
 
 #### Implement the `Loading` Component
 
-- [ ] Build the **`Loading`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `loading`
-  - [ ] Render an element with the class name of `loading-message` that contains the text `"Loading"`
+- [x] Build the **`Loading`** component to:
+  - [x] Render JSX that is wrapped by an element with the class name of `loading`
+  - [x] Render an element with the class name of `loading-message` that contains the text `"Loading"`
 
 #### Implement the `Navbar` Component
 
 - [ ] Build the **`Navbar`** component to:
-  - [ ] Render JSX that is wrapped by a `nav` element with the class name of `navbar`
-  - [ ] Render the app's logo as an element with the class name of `logo`.
-    - [ ] Inside that element should be a `Link` component from `react-router-dom` that navigates the user to the `/` route when clicked.
-    - [ ] Inside that `Link` component should be the application's logo (text or image).
-  - [ ] Render the `NavLinks.jsx` component with links to each of the resources and the `/activity` route.
+  - [x] Render JSX that is wrapped by a `nav` element with the class name of `navbar`
+  - [x] Render the app's logo as an element with the class name of `logo`.
+    - [x] Inside that element should be a `Link` component from `react-router-dom` that navigates the user to the `/` route when clicked.
+    - [x] Inside that `Link` component should be the application's logo (text or image).
+  - [x] Render the `NavLinks.jsx` component with links to each of the resources and the `/activity` route.
 
 #### Implement the `NavLinks` Component
 
-- [ ] Build the **`NavLinks`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `nav-links`
-  - [ ] Render a `Link` element from `react-router-dom` for:
-    - [ ] The `/activity` route with a label of `Activity`.
-    - [ ] The `/nutrition` route with a label of `Nutrition`.
-    - [ ] A route for any other resource page
+- [x] Build the **`NavLinks`** component to:
+  - [x] Render JSX that is wrapped by an element with the class name of `nav-links`
+  - [x] Render a `Link` element from `react-router-dom` for:
+    - [x] The `/activity` route with a label of `Activity`.
+    - [x] The `/nutrition` route with a label of `Nutrition`.
+    - [x] A route for any other resource page
   - [ ] If a valid user is logged in, it should render an element with the class name of `logout-button` that calls the `logoutUser` function when clicked.
     - [ ] The `logoutUser` function should remove the `lifetracker_token` from local storage and refresh the page so that all user data is reset.
-  - [ ] If no valid user is logged in:
-    - [ ] Render a `Link` element that redirects to the `/login` route with the label `Login`
-    - [ ] Render a `Link` element that redirects to the `/register` route with the label `Sign Up`
+  - [x] If no valid user is logged in:
+    - [x] Render a `Link` element that redirects to the `/login` route with the label `Login`
+    - [x] Render a `Link` element that redirects to the `/register` route with the label `Sign Up`
 
 #### Implement the `LoginForm` Component
 
-- [ ] Build the **`LoginForm`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `login-form`
-  - [ ] Render an input element for the following fields:
-    - [ ] `email`
-    - [ ] `password`
-  - [ ] Each `input` element in the form should have a class name of `form-input` and should have the following props set:
-    - [ ] `name` - the `name` of the `input` field being rendered (`email`, `password`)
-    - [ ] `type` - the type of the `input` element (`text`, `email`, `number`, etc.)
-    - [ ] `value` - the current value of the `input` element
-    - [ ] `onChange` - the `onChange` handler function
+- [x] Build the **`LoginForm`** component to:
+  - [x] Render JSX that is wrapped by an element with the class name of `login-form`
+  - [x] Render an input element for the following fields:
+    - [x] `email`
+    - [x] `password`
+  - [x] Each `input` element in the form should have a class name of `form-input` and should have the following props set:
+    - [x] `name` - the `name` of the `input` field being rendered (`email`, `password`)
+    - [x] `type` - the type of the `input` element (`text`, `email`, `number`, etc.)
+    - [x] `value` - the current value of the `input` element
+    - [x] `onChange` - the `onChange` handler function
   - [ ] Validate the `email` field. If the user has entered text into the `email` field and it doesn't contain an `@` symbol, then an error message should be displayed in an element with the class name of `error` indicating that the entry is not a valid email.
   - [ ] Gracefully handle errors:
     - [ ] If the user has attempted to login and gotten a `401` error, then an error message should be displayed in an element with the class name of `error` indicating that the `email` and `password` combination is incorrect.
     - [ ] If the user has attempted to login and gotten a `400` or `422` error, then an error message should be displayed in an element with the class name of `error` indicating what went wrong.
-  - [ ] There should be a `button` element with the class name of `submit-login`:
-    - [ ] It should contain the text `"Login"`
+  - [x] There should be a `button` element with the class name of `submit-login`:
+    - [x] It should contain the text `"Login"`
     - [ ] When clicked, it should call the `loginUser` function
 
 #### Implement the `LoginPage` Component
 
-- [ ] Build the **`LoginPage`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `login-page`
+- [x] Build the **`LoginPage`** component to:
+  - [x] Render JSX that is wrapped by an element with the class name of `login-page`
   - [ ] Using either a custom hook, context, or manually set state, check to see if a user is already logged in
     - [ ] If the user is already logged in, redirect them to the `/activity` page.
     - [ ] If no user is authenticated, render the `LoginForm` component and pass it any props it needs.
@@ -543,18 +543,18 @@ Here are the pieces of functionality that should be built out for the backend:
       - [ ] Implement the features outlined in the tests until they're all passing
     - [ ] In the `app.js` file, add the `Authentication` header parsing middleware to the Express app's middleware pipeline
   - [ ] Commit all work to `git`
-  - [ ] The **/auth** routes
-    - [ ] In the `routes` directory, create two new files: `routes/auth.js` and `routes/auth.test.js`
-      - [ ] A new Express router should be created. It should handle:
-        - [ ] A `GET` request to the `/me` endpoint
-          - [ ] It should send a JSON response back to the client with the user info like so: `{ "user": { "email": "user@gmail.com", ... } }`
-        - [ ] A `POST` request to the `/login` endpoint
-          - [ ] It should accept a request body with `email` and `password` keys
-          - [ ] It should send a JSON response back to the client with a new JWT and user info like so: `{ "token": "e2c2...", "user": { "email": "user@gmail.com", ... } }`
-        - [ ] A `POST` request to the `/register` endpoint
-          - [ ] It should accept a request body with `email`, `username`, `firstName`, `lastName`, and `password` keys
-          - [ ] It should send a JSON response back to the client with a `201` status code, along with a new JWT and user info like so: `{ "token": "e2c2...", "user": { "email": "user@gmail.com", ... } }`
-      - [ ] It should be mounted at the `/auth` endpoint in the `app.js` file
+  - [x] The **/auth** routes
+    - [x] In the `routes` directory, create two new files: `routes/auth.js` and `routes/auth.test.js`
+      - [x] A new Express router should be created. It should handle:
+        - [x] A `GET` request to the `/me` endpoint
+          - [x] It should send a JSON response back to the client with the user info like so: `{ "user": { "email": "user@gmail.com", ... } }`
+        - [x] A `POST` request to the `/login` endpoint
+          - [x] It should accept a request body with `email` and `password` keys
+          - [x] It should send a JSON response back to the client with a new JWT and user info like so: `{ "token": "e2c2...", "user": { "email": "user@gmail.com", ... } }`
+        - [x] A `POST` request to the `/register` endpoint
+          - [x] It should accept a request body with `email`, `username`, `firstName`, `lastName`, and `password` keys
+          - [x] It should send a JSON response back to the client with a `201` status code, along with a new JWT and user info like so: `{ "token": "e2c2...", "user": { "email": "user@gmail.com", ... } }`
+      - [x] It should be mounted at the `/auth` endpoint in the `app.js` file
     - [ ] In the `routes/auth.test.js` file:
       - [ ] Test the `POST /auth/login` endpoint
         - [ ] Write test cases for:
