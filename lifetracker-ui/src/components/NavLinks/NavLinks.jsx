@@ -2,42 +2,41 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavLinks.css";
 
-const NavLinks = ({ loggedIn }) => {
-  const logoutUser = () => {
-    // remove lifetracker_token from storage and reset user data
-  };
+const NavLinks = ({ loggedIn, handleLogout }) => {
+  const handleClick = (e) => {};
+
   return (
     <div className="nav-links">
       <Link className="nav-button" to="/activity">
-        <button>Activity</button>
+        Activity
       </Link>
 
       <Link className="nav-button" to="/nutrition">
-        <button>Nutrition</button>
+        Nutrition
       </Link>
 
       <Link className="nav-button" to="/exercise">
-        <button>Exercise</button>
+        Exercise
       </Link>
 
       <Link className="nav-button" to="/sleep">
-        <button>Sleep</button>
+        Sleep
       </Link>
 
       {/* Display Sign Out button if user is logged in */}
       {loggedIn ? (
-        <div className="logout-button" onSubmit={logoutUser}>
-          <Link className="nav-button" to="/">
-            <button type="submit">Sign Out</button>
+        <div>
+          <Link className="logout-button" to="/" onClick={handleLogout}>
+            Sign Out
           </Link>
         </div>
       ) : (
         <div>
-          <Link className="nav-button" to="/register">
-            <button>Register</button>
+          <Link className="logout-button" to="/register">
+            Register
           </Link>
-          <Link className="nav-button" to="/login">
-            <button>Login</button>
+          <Link className="logout-button" to="/login">
+            Login
           </Link>
         </div>
       )}

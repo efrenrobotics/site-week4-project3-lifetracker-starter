@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import NavLinks from "../NavLinks/NavLinks";
 import "./Navbar.css";
 
-const Navbar = ({ onLogin, loggedIn, setLoggedIn }) => {
+const Navbar = ({ loggedIn, handleLogout }) => {
   return (
     <div className="navbar">
       <Link to="/">
@@ -14,7 +14,7 @@ const Navbar = ({ onLogin, loggedIn, setLoggedIn }) => {
         />
       </Link>
 
-      <NavLinks loggedIn={loggedIn} />
+      <NavLinks loggedIn={loggedIn} handleLogout={handleLogout} />
     </div>
   );
 };

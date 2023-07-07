@@ -48,7 +48,7 @@ class User {
     email
   ) => {
     // handle invalid email format
-    if (email.indexOf("@") > 1) {
+    if (!email.indexOf("@") > 1) {
       throw new BadRequestError(`invalid email format`);
     }
     // handle email or username exists in database

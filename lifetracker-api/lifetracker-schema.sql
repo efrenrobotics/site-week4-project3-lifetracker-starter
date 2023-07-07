@@ -42,10 +42,7 @@ CREATE TABLE nutrition (
 -- Create the sleep table
 CREATE TABLE sleep (
     id         SERIAL PRIMARY KEY,
-    name       TEXT NOT NULL,
-    category   TEXT NOT NULL,
-    calories   INTEGER NOT NULL,
-    image_url  TEXT NOT NULL,
-    user_id    INTEGER NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    start_time TIMESTAMP NOT NULL,
+    end_time   TIMESTAMP NOT NULL,
+    user_id    INTEGER REFERENCES users(id) ON DELETE CASCADE
 );

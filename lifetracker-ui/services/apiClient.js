@@ -21,6 +21,9 @@ class ApiClient {
   async request({ endpoint, method, data = {} }) {
     // construct url to given endpoint
     const url = `${API_BASE_URL}/${endpoint}`;
+
+    console.log(`${url}`);
+
     // dynamic params for GET request
     const params = method === "get" ? data : {};
 
@@ -32,7 +35,7 @@ class ApiClient {
 
     try {
       const res = await axios({ url, method, data, params, headers });
-      return { data: res.data, error: null, message: null };
+      return { data: res.data, params: params, error: null, message: null };
     } catch (e) {
       console.error("APIClient make request error", e.response);
       if (e.response.status === 404) return { data: null, error: "Not Found" };
@@ -44,9 +47,39 @@ class ApiClient {
     }
   }
 
+  async fetchUser() {
+    return await this.request({
+      endpoint: `users/me`,
+      method: `GET`,
+    });
+  }
+
   async login(creds) {
     return await this.request({
       endpoint: `auth/login`,
+      method: `POST`,
+      data: creds,
+    });
+  }
+
+  async register(creds) {
+    return await this.request({
+      endpoint: `auth/register`,
+      method: `POST`,
+      data: creds,
+    });
+  }
+
+  async getSleepRows(userId) {
+    return await this.request({
+      endpoint: `sleep/${userId}`,
+      method: `GET`,
+    });
+  }
+
+  async createSleepEntry(creds) {
+    return await this.request({
+      endpoint: `sleep/create`,
       method: `POST`,
       data: creds,
     });

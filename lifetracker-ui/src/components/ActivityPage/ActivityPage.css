@@ -1,0 +1,12 @@
+.activity-page {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.log-buttons {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
