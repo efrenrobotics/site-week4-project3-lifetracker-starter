@@ -1,5 +1,5 @@
 // deployed api
-const PRODUCTION_API_BASE_URL = "";
+const PRODUCTION_API_BASE_URL = "https://lifetracker-api-c8ux.onrender.com";
 
 const DEVELOPMENT_API_BASE_URL = "http://localhost:3001";
 
