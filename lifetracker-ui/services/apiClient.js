@@ -33,6 +33,7 @@ class ApiClient {
 
     try {
       const res = await axios({ url, method, data, params, headers });
+      console.log(`res is ${res.data}`);
       return { data: res.data, params: params, error: null, message: null };
     } catch (e) {
       console.error("APIClient make request error", e.response);
