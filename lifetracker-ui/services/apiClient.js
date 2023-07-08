@@ -22,8 +22,6 @@ class ApiClient {
     // construct url to given endpoint
     const url = `${API_BASE_URL}/${endpoint}`;
 
-    console.log(`${url}`);
-
     // dynamic params for GET request
     const params = method === "get" ? data : {};
 
@@ -45,13 +43,6 @@ class ApiClient {
         message: e.response.data.error.message,
       };
     }
-  }
-
-  async fetchUser() {
-    return await this.request({
-      endpoint: `users/me`,
-      method: `GET`,
-    });
   }
 
   async login(creds) {

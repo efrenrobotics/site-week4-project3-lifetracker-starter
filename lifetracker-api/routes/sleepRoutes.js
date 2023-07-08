@@ -7,11 +7,7 @@ const Sleep = require("../models/sleep");
 router.get("/:userId", async (req, res, next) => {
   try {
     const userId = req.params.userId;
-    console.log("req params: ", req.params.userId);
-    console.log(`userID : ${userId}`);
-    console.log("userId is ", JSON.stringify(userId));
     const sleepRes = await Sleep.getSleepRows(userId);
-    console.log(`${sleepRes}`);
     return res.status(200).json({ sleepRes });
   } catch (e) {
     next(e);

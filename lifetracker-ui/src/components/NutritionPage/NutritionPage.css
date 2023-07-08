@@ -17,3 +17,7 @@
 .NutritionPage .button button {
   flex: 1;
 }
+
+.nutrition {
+  height: 100%;
+}

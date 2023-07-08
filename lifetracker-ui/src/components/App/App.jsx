@@ -50,8 +50,7 @@ function App() {
     };
 
     checkLoggedIn();
-    console.log(sleep);
-  }, []);
+  }, [userId]);
 
   const handleLogin = async (data) => {
     try {
@@ -134,7 +133,11 @@ function App() {
           <Route
             path="/sleep"
             element={
-              loggedIn ? <SleepPage userID={userId} /> : <AccessForbiden />
+              loggedIn ? (
+                <SleepPage loggedIn={loggedIn} userID={userId} />
+              ) : (
+                <AccessForbiden />
+              )
             }
           />
 
