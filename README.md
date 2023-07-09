@@ -6,8 +6,14 @@
 
 Everywhere around us is data waiting to be collected and utilized. In recent years, we've seen the rise of applications and services that exist to quantify concepts that were previously hard to capture. FitBit, Apple Health, and Woop are all $1 billion dollar services to offer tracking statistics about how we live our lives. The LifeTracker app you'll be building will do exactly that - track your life by quantifying your activity.
 
-<a href="https://www.loom.com/share/4b34439f6e16455bbe209946b076297f">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/4b34439f6e16455bbe209946b076297f-with-play.gif">
+## WEBSITE LINK
+
+https://lifetracker-ui-j1m0.onrender.com/
+
+## VIDEO LINK
+
+<a href="https://www.loom.com/share/224bfbbbb8774b948653dedbc42e6b7d">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/224bfbbbb8774b948653dedbc42e6b7d-with-play.gif">
   </a>
 
 ## Goals
