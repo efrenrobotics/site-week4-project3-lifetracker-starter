@@ -34,7 +34,7 @@ const Hero = () => {
           take control of your life <br></br> one step at a time
         </h2>
       </div>
-      <img className="hero-img" src="images/lifetracker_logo.png" />
+      <img className="hero-img" src="./images/lifetracker_logo.png" />
     </div>
   );
 };
@@ -43,16 +43,16 @@ const HabitGrid = () => {
   return (
     <div className="habit-grid">
       <Link className="habit-link" to="/activity">
-        <HabitCard imgPath={"/images/activity.png"} category={"activity"} />
+        <HabitCard imgPath={"./images/activity.png"} category={"activity"} />
       </Link>
       <Link className="habit-link" to="/nutrition">
-        <HabitCard imgPath={"/images/nutrition.png"} category={"nutrition"} />
+        <HabitCard imgPath={"./images/nutrition.png"} category={"nutrition"} />
       </Link>
       <Link className="habit-link" to="/sleep">
-        <HabitCard imgPath={"/images/sleep.png"} category={"sleep"} />
+        <HabitCard imgPath={"./images/sleep.png"} category={"sleep"} />
       </Link>
       <Link className="habit-link" to="/exercise">
-        <HabitCard imgPath={"/images/exercise.png"} category={"exercise"} />
+        <HabitCard imgPath={"./images/exercise.png"} category={"exercise"} />
       </Link>
     </div>
   );
