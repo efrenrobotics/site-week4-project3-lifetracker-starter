@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Landing.css";
 
-import activity from "lifetracker-ui/images/activity.png";
-import exercise from "lifetracker-ui/images/exercise.png";
-import sleep from "lifetracker-ui/images/sleep.png";
-import nutrition from "lifetracker-ui/images/nutrition.png";
+import logo from "../../../images/lifetracker_logo.png";
+import activity from "../../../images/activity.png";
+import exercise from "../../../images/exercise.png";
+import sleep from "../../../images/sleep.png";
+import nutrition from "../../../images/nutrition.png";
 
 /*
   LANDING
@@ -39,7 +40,7 @@ const Hero = () => {
           take control of your life <br></br> one step at a time
         </h2>
       </div>
-      {/* <img className="hero-img" src={logo} /> */}
+      <img className="hero-img" src={logo} />
     </div>
   );
 };
