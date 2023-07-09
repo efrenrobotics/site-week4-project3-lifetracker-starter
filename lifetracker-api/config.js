@@ -20,7 +20,7 @@ function getDatabaseUri() {
   const dbName = process.env.NODE_ENV === "test" ? dbTestName : dbProdName;
 
   return (
-    process.env.DATABASE_URL ||
+    process.env.DATABASE_HOSTED_URL ||
     `postgresql://${dbUser}:${dbPass}@${dbHost}:${dbPort}/${dbName}`
   );
 }
