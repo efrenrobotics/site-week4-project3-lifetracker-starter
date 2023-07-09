@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Landing.css";
-import logo from "lifetracker-ui/images/lifetracker_logo.png";
+
 import activity from "lifetracker-ui/images/activity.png";
 import exercise from "lifetracker-ui/images/exercise.png";
 import sleep from "lifetracker-ui/images/sleep.png";
@@ -39,7 +39,7 @@ const Hero = () => {
           take control of your life <br></br> one step at a time
         </h2>
       </div>
-      <img className="hero-img" src={logo} />
+      {/* <img className="hero-img" src={logo} /> */}
     </div>
   );
 };
