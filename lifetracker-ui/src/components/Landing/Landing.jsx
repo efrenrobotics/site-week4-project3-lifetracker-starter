@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Landing.css";
+import logo from "lifetracker-ui/images/lifetracker_logo.png";
+import activity from "lifetracker-ui/images/activity.png";
+import exercise from "lifetracker-ui/images/exercise.png";
+import sleep from "lifetracker-ui/images/sleep.png";
+import nutrition from "lifetracker-ui/images/nutrition.png";
 
 /*
   LANDING
@@ -34,7 +39,7 @@ const Hero = () => {
           take control of your life <br></br> one step at a time
         </h2>
       </div>
-      <img className="hero-img" src="./images/lifetracker_logo.png" />
+      <img className="hero-img" src={logo} />
     </div>
   );
 };
@@ -43,16 +48,16 @@ const HabitGrid = () => {
   return (
     <div className="habit-grid">
       <Link className="habit-link" to="/activity">
-        <HabitCard imgPath={"./images/activity.png"} category={"activity"} />
+        <HabitCard imgPath={activity} category={"activity"} />
       </Link>
       <Link className="habit-link" to="/nutrition">
-        <HabitCard imgPath={"./images/nutrition.png"} category={"nutrition"} />
+        <HabitCard imgPath={nutrition} category={"nutrition"} />
       </Link>
       <Link className="habit-link" to="/sleep">
-        <HabitCard imgPath={"./images/sleep.png"} category={"sleep"} />
+        <HabitCard imgPath={sleep} category={"sleep"} />
       </Link>
       <Link className="habit-link" to="/exercise">
-        <HabitCard imgPath={"./images/exercise.png"} category={"exercise"} />
+        <HabitCard imgPath={exercise} category={"exercise"} />
       </Link>
     </div>
   );
