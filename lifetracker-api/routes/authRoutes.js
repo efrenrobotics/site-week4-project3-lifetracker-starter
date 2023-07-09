@@ -17,7 +17,9 @@ router.get("/api/me", async (req, res, next) => {
 
 // POST register endpoiht
 router.post("/register", async (req, res, next) => {
+  console.log(`before register post `);
   try {
+    console.log(`in register post`);
     const { username, first_name, last_name, email, password } = req.body;
     const user = await User.register(
       username,
@@ -26,12 +28,14 @@ router.post("/register", async (req, res, next) => {
       last_name,
       email
     );
+    console.log(`after user register psot`);
     // user registration succesful
     const token = jwt.sign(
       { userId: user.id, userName: user.name },
       process.env.SECRET_KEY,
       { expiresIn: "1h" }
     );
+    console.log(`before return auth/register post`);
     return res.status(201).json({
       message: "registered succesfully",
       token: token,

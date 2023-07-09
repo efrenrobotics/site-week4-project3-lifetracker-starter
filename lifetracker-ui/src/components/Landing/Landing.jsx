@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Landing.css";
-
 import logo from "../../../images/lifetracker_logo.png";
 import activity from "../../../images/activity.png";
 import exercise from "../../../images/exercise.png";
