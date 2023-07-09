@@ -9,6 +9,9 @@ const SleepCard = ({ startDateTime, endDateTime }) => {
       <h2>{date} </h2>
       <p>start time: {startTime}</p>
       <p>end time: {endTime}</p>
+      <br></br>
+      <br></br>
+      <p>timestamp: {new Date(startDateTime).toLocaleString().split(",")[0]}</p>
     </div>
   );
 };
